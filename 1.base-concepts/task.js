@@ -3,28 +3,28 @@
 "use strict";
 
 function solveEquation(a, b, c) {
-  
-  let arr = [];
 
-  let d = b ** 2 - (4 * a * c);
-  Math.sqrt(d);
-  console.log(d);
-  let x;
+	let arrSolveEquation = [];
 
-    if (d < 0) {
-        console.log(arr);
-    } else if (d = 0) {
-        x = -b / (2 * a);
-        arr.push(x);
-        console.log(arr);
-    } else (d > 0);
-    x = (-b + Math.sqrt(d)) / (2 * a) && (-b - Math.sqrt(d)) / (2 * a);
-    for (x = 0; x < arr.length; x++) {
-        arr.push(x);
-        console.log(arr);
-    }
-    
-    return arr;
+	let discriminant = b ** 2 - (4 * a * c);
+	Math.sqrt(discriminant);
+	console.log(discriminant);
+	let i;
+
+	if (discriminant < 0) {
+		console.log(arrSolveEquation);
+	} else if (discriminant = 0) {
+		i = -b / (2 * a);
+		arrSolveEquation.push(i);
+		console.log(arrSolveEquation);
+	} else(discriminant > 0);
+	i = (-b + Math.sqrt(discriminant)) / (2 * a) && (-b - Math.sqrt(discriminant)) / (2 * a);
+	for (i = 0; i < arrSolveEquation.length; i++) {
+		arrSolveEquation.push(i);
+		console.log(arrSolveEquation);
+	}
+
+	return arrSolveEquation;
 
 }
 
@@ -35,21 +35,21 @@ console.log(solveEquation(1, 2, 3));
 "use strict";
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-    
-    console.log(percent, typeof percent, !Number.isNaN(percent));
 
-    if (Number.isNaN(percent) && Number.isNaN(contribution) && Number.isNaN(amount)) {
-        const perMonth = percent / 100 / 12;
-        console.log('perMonth', perMonth);
+	console.log(percent, typeof percent, !Number.isNaN(percent));
 
-        const bodyCredit = amount - contribution;
-        const monthly = bodyCredit * (perMonth + (perMonth / (((1 + perMonth) ** countMonths) - 1)));
-        const totalSum = parseFloat((monthly * countMonths).toFixed(2));
-        return totalSum;
-    }
+	if (Number.isNaN(percent) && Number.isNaN(contribution) && Number.isNaN(amount)) {
+		const perMonth = percent / 100 / 12;
+		console.log('perMonth', perMonth);
 
-    return false;
-    
+		const bodyCredit = amount - contribution;
+		const monthly = bodyCredit * (perMonth + (perMonth / (((1 + perMonth) ** countMonths) - 1)));
+		const totalSum = parseFloat((monthly * countMonths).toFixed(2));
+		return totalSum;
+	}
+
+	return false;
+
 }
 
 console.log(calculateTotalMortgage("test", 0, 10000, 36));
