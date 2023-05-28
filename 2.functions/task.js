@@ -1,10 +1,10 @@
 // Задача 1
 
-function getArrayParams(arr) {
+function getArrayParams(...arr) {
 
-	let min, max, sum, avg;
-	min = -Infinity;
-	max = Infinity;
+	let min, max, avg;
+	min = Infinity;
+	max = -Infinity;
 
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] > max) {
@@ -14,14 +14,19 @@ function getArrayParams(arr) {
 		}
 	}
 
-	arr.reduce((acc, c) => acc + c);
-	avg = (numbers) => numbers.reduce((acc, number) => acc + number, 0) / numbers.length
-	avg.toFixed;
+	avg = (arr) => {
+		const sum = arr.reduce((acc, c) => acc + c, 0);
+		const length = arr.length;
+		return sum / length;
+	};
+
+	avg.toFixed(2);
+	parseFloat('avg');
 
 	return {
 		min: min,
 		max: max,
-		avg: avg
+		avg: avg,
 	};
 
 }
