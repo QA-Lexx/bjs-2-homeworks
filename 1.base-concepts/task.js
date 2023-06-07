@@ -11,7 +11,7 @@ function solveEquation(a, b, c) {
 
 	if (discriminant < 0) {
 		let emptyArr = [];
-	} else if (discriminant = 0) {
+	} else if (discriminant === 0) {
 		i = -b / (2 * a);
 		arrSolveEquation.push(i);
 	} else {
@@ -25,29 +25,20 @@ function solveEquation(a, b, c) {
 
 }
 
+console.log(solveEquation(1, 2, 10));
+
 // Задача 2
 
 "use strict";
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	Number(percent);
-	Number(contribution);
-	Number(amount);
-	Number(countMonths);
 
-	if (Number.isNaN(percent) && Number.isNaN(contribution) && Number.isNaN(amount)) {
-		Number(perMonth);
-		Number(bodyCredit);
-		Number(monthly);
-		Number(totalSum);
-
-		const perMonth = percent / 100 / 12;
-		const bodyCredit = amount - contribution;
-		const monthly = bodyCredit * (perMonth + (perMonth / (((1 + perMonth) ** countMonths) - 1)));
-		const totalSum = parseFloat((monthly * countMonths).toFixed(2));
-		return totalSum;
-	}
-
-	return calculateTotalMortgage;
+	const perMonth = percent / 100 / 12;
+	const bodyCredit = amount - contribution;
+	const monthly = bodyCredit * (perMonth + (perMonth / (((1 + perMonth) ** countMonths) - 1)));
+	const totalSum = parseFloat((monthly * countMonths).toFixed(2));
+	return totalSum;
 
 }
+
+console.log(calculateTotalMortgage(15, 0, 10000, 36));
