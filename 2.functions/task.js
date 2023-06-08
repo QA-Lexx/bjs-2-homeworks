@@ -9,29 +9,28 @@ function getArrayParams(...arr) {
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] > max) {
 			max = arr[i];
-		} else if (arr[i] < min) {
+		};
+		if (arr[i] < min) {
 			min = arr[i];
-		}
-	}
-
-	avg = (arr) => {
-		const sum = arr.reduce((acc, c) => acc + c, 0);
-		const length = arr.length;
-		return sum / length;
+		};
 	};
 
-	avg.toFixed(2);
-	parseFloat('avg');
+	const sum = arr.reduce((acc, c) => acc + c, 0);
+	const length = arr.length;
+	avg = sum / length;
+
+	let avgFix = avg.toFixed(2);
+	let avgParse = parseFloat(avgFix);
 
 	return {
 		min: min,
 		max: max,
-		avg: avg,
+		avgParse: avgParse,
 	};
 
 }
 
-console.log(getArrayParams([-99, 99, 10]));
+console.log(getArrayParams(-99, 99, 10));
 
 // Задача 2
 
