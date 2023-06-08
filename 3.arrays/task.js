@@ -38,16 +38,22 @@ let avgFemale;
 
 function getUsersNamesInAgeRange(users, gender) {
 
-    males.filter(users => users.gender);
-    females.filter(users => users.gender);
+    males.filter(users => users.gender === "мужской");
+    females.filter(users => users.gender === "женский");
 
     for (let user of users) {
-        males.push(users.gender == "мужской");
-    }
+        if (users.gender === "мужской") {
+            males.push(user);
+        };
+        return males;
+    };
 
     for (let user of users) {
-        females.push(users.gender == "женский");
-    }
+        if (users.gender === "женский") {
+            females.push(user);
+        };
+        return females;
+    };
 
     avgMale = (males) => {
         const sumMales = males.reduce((acc, c) => acc + c, 0);
@@ -61,7 +67,10 @@ function getUsersNamesInAgeRange(users, gender) {
         return sumFemales / lengthFemales;
     };
 
+    avgMale = males.reduce((acc, item) => acc + item, 0) / males.length;
+    avgFemale = females.reduce((acc, item) => acc + item, 0) / females.length;
+
     return avgMale && avgFemale;
 }
 
-console.log(getUsersNamesInAgeRange(users, gender));
+console.log(getUsersNamesInAgeRange(users, "мужской"));
