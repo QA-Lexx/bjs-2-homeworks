@@ -13,8 +13,20 @@ console.log(compareArrays(arr1, arr2));
 
 // Задача 2
 
-let gender = ["мужской", "женский"];
-let users = [
+function getUsersNamesInAgeRange(users, gender) {
+    const filterUsers = users.filter(user => user.gender === gender);
+
+    if (filterUsers.length === 0) {
+        return 0;
+    }
+
+    const totalAge = filterUsers.reduce((sum, user) => sum + user.age, 0);
+
+    const averageAge = totalAge / filterUsers.length;
+    return averageAge;
+}
+
+const people = [
     { firstName: "Александр", secondName: "Карпов", age: 17, gender: "мужской" },
     { firstName: "Егор", secondName: "Морозов", age: 21, gender: "мужской" },
     { firstName: "Мелисса", secondName: "Леонова", age: 40, gender: "женский" },
@@ -29,48 +41,9 @@ let users = [
     { firstName: "Владислав", secondName: "Давыдов", age: 40, gender: "мужской" },
     { firstName: "Илья", secondName: "Казаков", age: 35, gender: "мужской" },
     { firstName: "Евгений", secondName: "Кузьмин", age: 19, gender: "мужской" },
-];
+]
 
-let males = [];
-let females = [];
-let avgMale;
-let avgFemale;
-
-function getUsersNamesInAgeRange(users, gender) {
-
-    males.filter(users => users.gender === "мужской");
-    females.filter(users => users.gender === "женский");
-
-    for (let user of users) {
-        if (users.gender === "мужской") {
-            males.push(user);
-        };
-        return males;
-    };
-
-    for (let user of users) {
-        if (users.gender === "женский") {
-            females.push(user);
-        };
-        return females;
-    };
-
-    avgMale = (males) => {
-        const sumMales = males.reduce((acc, c) => acc + c, 0);
-        const lengthMales = males.length;
-        return sumMales / lengthMales;
-    };
-
-    avgFemale = (females) => {
-        const sumFemales = females.reduce((acc, c) => acc + c, 0);
-        const lengthFemales = females.length;
-        return sumFemales / lengthFemales;
-    };
-
-    avgMale = males.reduce((acc, item) => acc + item, 0) / males.length;
-    avgFemale = females.reduce((acc, item) => acc + item, 0) / females.length;
-
-    return avgMale && avgFemale;
-}
-
-console.log(getUsersNamesInAgeRange(users, "мужской"));
+console.log(getUsersNamesInAgeRange(people, "мужской"));
+console.log(getUsersNamesInAgeRange(people, "женский"));
+console.log(getUsersNamesInAgeRange([], "женский"));
+console.log(getUsersNamesInAgeRange(people, "инопланетянин"));
