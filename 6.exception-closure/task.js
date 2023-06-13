@@ -1,9 +1,10 @@
 ﻿// Задача 1
 
 function parseCount(value) {
-    Number.parseFloat(); {
-        if (value >= 0 && value <= 10) {
-            return value;
+    Number.parseFloat(value); {
+        if (isNaN(value)) {
+            let parseFlValue = value;
+            return parseFlValue;
         }
         else {
             throw new Error("Невалидное значение");
@@ -12,13 +13,14 @@ function parseCount(value) {
 };
 
 function validateCount(value) {
-    Number.parseCount(); {
-        if (value >= 0 && value <= 10) {
-            return value;
+    Number.parseCount(value); {
+        if (isNaN(value)) {
+            let parseCoValue = value;
+            return parseCoValue;
         }
         else {
             try {
-                value <= 0 || value >= 10;
+                !isNaN(value);
             } catch (error) {
                 console.log("Ошибка, сударь");
             }
