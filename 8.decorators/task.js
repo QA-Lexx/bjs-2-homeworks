@@ -1,7 +1,5 @@
 //Задача № 1
 
-const md5 = require('js-md5');
-
 function cachingDecoratorNew(func) {
     let cache = [];
 
@@ -10,8 +8,8 @@ function cachingDecoratorNew(func) {
 
         let objectInCache = cache.find(item => item.hash === hash);
         if (objectInCache) {
-            console.log("Из кеша: " + objectInCache.value);
-            return "Из кеша: " + objectInCache.value;
+            console.log("Из кэша: " + objectInCache.value);
+            return "Из кэша: " + objectInCache.value;
         }
         let result = func(...args);
 
