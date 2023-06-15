@@ -3,7 +3,7 @@
 function parseCount(value) {
     Number.parseFloat(value); {
         if (isNaN(value)) {
-            let parseFlValue = value;
+            let parseFlValue = Number.parseFloat(value);
             return parseFlValue;
         }
         else {
@@ -13,9 +13,9 @@ function parseCount(value) {
 };
 
 function validateCount(value) {
-    Number.parseCount(value); {
+    parseCount(value); {
         if (isNaN(value)) {
-            let parseCoValue = value;
+            let parseCoValue = parseCount(value);
             return parseCoValue;
         }
         else {
